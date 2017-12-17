@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Assignment 4</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+     <link rel="stylesheet" href="Assets/default.css" />
+    <link rel="stylesheet" href="Assets/layout.css" />
+    <link rel="stylesheet" href="Assets/media-queries.css" />
+    <style type="text/css">
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            ul li {
+                display: inline;
+            }
+    </style>
+</head>
+<body>
+    <form runat="server">
+       <%-- <header>   --%>       
+            <div style="width: 959px; margin: auto">
+                <img src="Assets/Images/Home-img.JPG" />
+                <ul>
+                    <li><a href="Home.aspx">Home</a></li>                   
+                </ul>
+            </div>
+ <%--       </header>--%>
+        <div id="body">
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+            <section class="content-wrapper main-content clear-fix">
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            </section>
+        </div>
+        <footer>
+            <div style="width: 959px; margin: auto">
+                    <p>
+                        &copy; <%: DateTime.Now.Year %> - My ASP.NET Application
+                    </p>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
